@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart-Jam | AI Showcase</title>
+    <style>
+        :root {
+            --primary-dark: #12313d;
+            --accent-green: #46c38e;
+            --light-bg: #f0f7f4;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--light-bg);
+            padding-top: 70px;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--primary-dark);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .nav-container a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .nav-container a:hover {
+            color: var(--accent-green);
+        }
+
+        /* Hero Section */
+        header {
+            background-color: var(--primary-dark);
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+
+        .logo {
+            width: 150px;
+            border-radius: 20%;
+            border: 3px solid var(--accent-green);
+            margin-bottom: 1rem;
+        }
+
+        /* Sections */
+        section {
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--primary-dark);
+            border-bottom: 3px solid var(--accent-green);
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .member-card, .task-card {
+            padding: 2rem;
+            background: var(--light-bg);
+            border-radius: 18px;
+            text-align: center;
+        }
+        
+        .member-card h3{
+            text-align: center;
+            font-size: 1rem;        
+            margin-bottom: 0.35rem;
+        }
+
+        .member-card p{
+            text-align: center;
+            font-size: 0.70rem;    
+            opacity: 0.85;
+        }
+
+        .task-card {
+            text-align: center;
+            border-left: 5px solid var(--accent-green);
+        }
+
+        .status-done {
+            color: #2ebf91;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--primary-dark);
+            color: white;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 600px) {
+            .nav-container { flex-direction: column; gap: 10px; }
+            body { padding-top: 120px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#home">Home</a>
+            <a href="#about">About Project</a>
+            <a href="#members">Members</a>
+            <a href="#assignments">Assignments</a>
+        </div>
+    </nav>
+
+    <header id="home">
+        <img src="SmartJamLogo.png" alt="Smart-Jam Logo" class="logo">
+        <h1>Smart-Jam</h1>
+        <p>Intelligent AI Traffic Situation Prediction</p>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>About the Project</h2>
+            <p>SMART-JAM is our project idea for traffic jam forecasting in the short term, mainly looking at what could happen within the next 60 minutes. The motivation is pretty basic: congestion builds fast, and once it is clearly visible on the road, you are already late. That is why we focus on prediction rather than only describing current traffic conditions.</p>
+            <p style="margin-top: 10px;">In SMART-JAM, we frame the task as learning from time based traffic observations and then producing a simple forecast for the near future, especially the 30 to 60 minute window. We are not trying to “solve traffic” or claim perfect coverage. The point is to explore whether patterns in the available data can support useful short term signals at all.</p>
+        </section>
+
+        <section id="members">
+            <h2>Project Members, each member tries his luck with new role every week!</h2>
+            <div class="grid">
+                <div class="member-card">
+                    <h3>Faina Petrenko</h3>
+                    <p>faina.petrenko@student.upjs.sk</p>
+                </div>
+                <div class="member-card">
+                    <h3>Mykola Beshynskyi</h3>
+                    <p>mykola.beshynskyi@student.upjs.sk</p>
+                </div>
+                <div class="member-card">
+                    <h3>Richard Buko</h3>
+                    <p>richard.buko@student.upjs.sk</p>
+                </div>
+                <div class="member-card">
+                    <h3>Dominik Gmitter</h3>
+                    <p>dominik.gmitter@student.upjs.sk</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="assignments">
+            <h2>Assignments</h2>
+            <div class="grid">
+                <div class="task-card">
+                    <h3>Task 1: Annotation</h3>
+                    <p>Introduction and project scope definition (Smart-Jam).</p>
+                    <span class="status-done">✓ <a href="SMART-JAM.pptx">Presentation</a><br>✓ <a href="annotation.txt">Annotation</a><br>✓ <a href="teamSmart-Jam_QA_1.docx">QA document</a></span>
+                </div>
+                <div class="task-card">
+                    <h3>Task 2: Web + Requirements</h3>
+                    <p>Webpage development and project presentation.</p>
+                    <span class="status-done">✓ <a href="Pitch Deck.pptx">Presentation</a><br>✓ <a href="teamSmart-Jam_QA_2.docx">QA document</a></span>
+                </div>
+                <div class="task-card">
+                    <h3>Task 3: SWOT</h3>
+                    <p>Swot analysis</p>
+                    <span class="status-done">✓ <a href="SWOT_SMART-JAM">Presentation</a><br>✓ <a href="SWOT Analysis.docx">SWOT analyza word</a><br>✓ <a href="teamSmart-Jam_QA_3.docx">QA document</a></span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Smart-Jam | Student Project | MIS 2026</p>
+    </footer>
+
+</body>
+</html>
